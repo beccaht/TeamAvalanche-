@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta name = "viewport" content = "width=device-width, intitial-scale=1.0">
+
+	<!-- Latest compiled and minified CSS -->
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	  <!-- Optional theme -->
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	  <!-- Latest compiled and minified JavaScript -->
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	
+	<link rel = "stylesheet" href='style.css'>
+
+	<script>
+        function openNav() 
+        {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+        
+        function closeNav() 
+        {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+
+	<title>Project Description</title>
+
+</head>	
+
+<body>
+
+	<header>
+
+		<a onclick="openNav()"><i class="glyphicon glyphicon-menu-hamburger"></i></a>
+
+		<h3>Project Title</h3>
+
+	</header>
+
+	<nav id="mySidenav" class="sidenav">
+	    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">Company Projects</a>
+	    <a href="employerBrowse.html">Browse</a>
+        <hr>        
+	    <a href="#">Company Information</a>
+	    <a href="#">Company Donations &amp; Impact</a>
+	</nav>
+    
+    <!--<script>
+        document.write("<img class='browserImg' src=''">);
+        getElementId('shorterDesc') = document.write('');
+    </script>-->
+
+	<img class = "browserImg" src = "https://images.unsplash.com/photo-1496303861503-f6ec4e50034e?dpr=1&auto=compress,format&fit=crop&w=1950&h=&q=80&cs=tinysrgb&crop=">
+
+	<div class="progress goalProgress">
+		  <div id = "progressBar" class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="70"
+		  aria-valuemin="0" aria-valuemax="100" style="width:70%; border-color: black;">
+		    Progress: $700 of $1,000
+		  </div>
+	</div> 
+
+	<div class = "browserProject">
+		<p id="shorterDesc">This is the description of the project.</p>
+	</div>
+
+<footer>
+
+	<p>&copy; Givv 2017</p>
+
+</footer> 
+
+</body>
+
+</html>
