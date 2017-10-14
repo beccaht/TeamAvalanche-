@@ -48,8 +48,9 @@
 
 <script async src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script>
-	function processForm() 
+	function processForm(event) 
     {
+		event.preventDefault();
 		console.log(document.getElementById("firstName"))
 		axios.post('https://givv.jnielson.com/users/login', {
 			email: document.getElementById("email").value,
