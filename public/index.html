@@ -44,7 +44,7 @@
 		})
 		.then(function(response) {
             console.log(response);
-            document.
+            document.getElementById("main-content").innerHTML = response.data;
 		})
 		.catch(function(error) {
 			console.log(error);
