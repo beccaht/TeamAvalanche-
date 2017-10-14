@@ -6,6 +6,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var session = require('express-session');
+var cors = require('cors');
+
 var MongoStore = require('connect-mongo')(session);
 
 //connect to MongoDB
@@ -36,6 +38,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(cors());
 //use sessions for tracking logins
 app.use(session({
   secret: 'givv rocks',

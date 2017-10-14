@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
-var cors = require('cors');
 var bcrypt = require('bcrypt');
 require('connect-flash');
 var ExpressBrute = require('express-brute');
