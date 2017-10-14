@@ -27,11 +27,11 @@
 		<form class="formWrapper">
             <div class="form-group">
                 <label for="email">Email:</label>
-                <input type="email" class="form-control" id="email">
+                <input type="email" class="form-control" id="logEmail">
             </div>
             <div class="form-group">
                 <label for="pwd">Password:</label>
-                <input type="password" class="form-control" id="pwd">
+                <input type="password" class="form-control" id="logPwd">
             </div>
 
             <button type="btn" class="btn btn-default" id="loginButton" onCLick="processForm(event)">Login</button>
@@ -52,10 +52,10 @@
 	function processForm(event) 
     {
 		event.preventDefault();
-		console.log(document.getElementById("firstName"))
+		console.log(document.getElementById("logEmail"))
 		axios.post('https://givv.jnielson.com/users/login', {
-			email: document.getElementById("email").value,
-      		password: document.getElementById("pwd").value,
+			logEmail: document.getElementById("logEmail").value,
+      		logPwd: document.getElementById("logPwd").value,
 		})
 		.then(function(response) {
             console.log(response);

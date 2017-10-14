@@ -9,6 +9,4 @@ var InformationObject = new mongoose.Schema({
       required: true
     }
   });
-
-  var Information = mongoose.model('Information', InformationObject);
-  module.exports = Information;
+  module.exports = InformationObject;

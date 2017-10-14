@@ -14,5 +14,4 @@ var DonationObject = new mongoose.Schema({
     }
   });
 
-  var Donation = mongoose.model('Donation', DonationObject);
-  module.exports = Donation;
+  module.exports = DonationObject;
