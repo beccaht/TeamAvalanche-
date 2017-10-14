@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta name = "viewport" content = "width=device-width, intitial-scale=1.0">
+
+	<!-- Latest compiled and minified CSS -->
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	  <!-- Optional theme -->
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	  <!-- Latest compiled and minified JavaScript -->
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	
+	<link rel = "stylesheet" href='../stylesheets/main.css'>
+	<link rel = "stylesheet" href='../stylesheets/admin.css'>
+
+	<script>
+        function openNav() 
+        {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+        
+        function closeNav() 
+        {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+
+	<title>Add an Employer Administrator</title>
+
+</head>	
+
+<body>
+
+	<header>
+
+		<a onclick="openNav()"><i class="glyphicon glyphicon-menu-hamburger"></i></a>
+
+		<img id = "logoImg" src = '../imgs/givvBlack.png'>
+
+	</header>
+
+	<nav id="mySidenav" class="sidenav">
+	    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	    <a href="adminProfile.html">Admin Profile</a>
+	    <a href="listOfCompanies.html">Companies</a>
+	    <a href="employeeBrowse.html">Projects</a>
+	</nav>
+
+	<h3 class = "newH3"><strong>Add a New Employer Administrator!</strong></h3>
+
+	<form class = "formWrapper">
+		<div class= "form-group">
+			<label>First Name:</label>
+				<input type = "text" class="form-control" id = "eaFirstName">
+        </div>
+        <div class= "form-group">
+			<label>Last Name:</label>
+				<input type = "text" class="form-control" id = "eaLastName">
+		</div>
+		<div class= "form-group">
+			<label>Email:</label>
+				<input type = "url" class="form-control" id = "EmployerAdministratorWebsite">
+		</div>
+		<button type="submit" class="btn btn-default btnEdit">Save</button>
+	</form>
+
+<footer>
+
+	<p>&copy; Givv 2017</p>
+
+</footer> 
+
+</body>
+
+</html>

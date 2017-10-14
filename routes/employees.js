@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var path = require('path');
 
 //Add this as a middleware if you need a route with login
 function requireLogin(req, res, next) {
@@ -13,11 +14,15 @@ function requireLogin(req, res, next) {
     }
   }
 
+console.log(path.join(__dirname,'..','public','employees'));
+router.use(express.static(path.join(__dirname,'..','public','employees')));
+
 router.use('/', requireLogin);
 /* GET home/login page. */
 router.get('/', function(req, res, next) {
   res.sendFile('index.html', {'root': 'public'});
 });
+
 
 /* GET signup page */
 router.get('/signUp.html', function(req, res, next) {
