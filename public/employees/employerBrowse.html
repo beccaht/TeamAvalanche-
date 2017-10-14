@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta name = "viewport" content = "width=device-width, intitial-scale=1.0">
+	
+	<!-- Latest compiled and minified CSS -->
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	  <!-- Optional theme -->
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	  <!-- Latest compiled and minified JavaScript -->
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<link rel = "stylesheet" href='style.css'>
+
+	<script>
+        function openNav() 
+        {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+        
+        function closeNav() 
+        {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+
+	<title>Browse Projects</title>
+
+</head>	
+
+<body>
+
+	<header>
+
+		<a onclick="openNav()"><i class="glyphicon glyphicon-menu-hamburger"></i></a>
+
+		<h3>Browse Projects</h3>
+
+	</header>
+
+	<nav id="mySidenav" class="sidenav">
+	    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	    <a href="#">Profile</a>
+	    <a href="myProject.html">My Project</a>
+	    <a href="selection.html">Browse</a>
+	    <hr>
+	    <a href="#">Your Donations &amp; Impact</a>
+	    <a href="#">Company Donations &amp; Impact</a>
+	    <hr>
+	    <a href="settings.html">Settings</a>
+	    <a href="#">Help &amp; Feedback</a>
+	</nav>
+
+	<div id = "allProjects">
+        
+        <script language="javascript">
+            for (var iCount=0; iCount < alProjects.length(); iCount++)
+                {
+                    document.write("<a href=''><img class='browserImg' src= alProjects.get(iCount)></a>");
+                    document.write("<div class='browserDescription");
+                    document.write("<h5>alProjects.get(iCount)</h5>");
+                    document.write("<p>alProjects.shortDesc</p>");
+                }
+        </script>
+
+		<!--<div class = "browserProject">
+            <a href = ''><img class = "browserImg" src = "https://images.unsplash.com/photo-1496303861503-f6ec4e50034e?dpr=1&auto=compress,format&fit=crop&w=1950&h=&q=80&cs=tinysrgb&crop="></a>
+			<div class = "browserDescription">
+				<H5>Project 1</H5>
+				<p>
+					This is a great project choose this one.
+				</p>
+			</div>
+		</div>
+
+		<div class = "browserProject">
+            <a href = ''><img class = "browserImg" src = "https://images.unsplash.com/photo-1496303861503-f6ec4e50034e?dpr=1&auto=compress,format&fit=crop&w=1950&h=&q=80&cs=tinysrgb&crop="></a>
+			<div class = "browserDescription">
+				<H5>Project 1</H5>
+				<p>
+					This is a great project choose this one.
+				</p>
+            </div>
+		</div>
+
+		<div class = "browserProject">
+            <a href = ''><img class = "browserImg" src = "https://images.unsplash.com/photo-1496303861503-f6ec4e50034e?dpr=1&auto=compress,format&fit=crop&w=1950&h=&q=80&cs=tinysrgb&crop="></a>
+			<div class = "browserDescription">
+				<H5>Project 1</H5>
+				<p>
+					This is a great project choose this one.
+				</p>
+			</div>
+		</div>
+-->
+	</div>
+
+        
+        
+<footer>
+
+	<p>&copy; Givv 2017</p>
+
+</footer> 
+
+</body>
+
+</html>
