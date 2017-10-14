@@ -29,7 +29,8 @@ header {
 .content, .formWrapper {
     margin-right: 45px;
     margin-left: 45px;
-    margin-top: 0px;
+    margin-top: 20px;
+
 }
 
 .userInput {
