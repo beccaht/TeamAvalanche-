@@ -32,6 +32,11 @@ hr {
 >>>>>>> 0afbc87197f86798becb114a116e75f6926cc9f3
 }
 
+.btnSave {
+	display: block;
+	margin-left: 50%;
+}
+
 .btn-primary {
   background-image: none;
   background-color: rgb(68,84,106);   
