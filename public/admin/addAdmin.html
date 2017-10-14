@@ -69,7 +69,7 @@
 		<label>Password: </label>
 				<input type = "password" class="form-control" id = "adminPassword">
 		</div>
-		<button type="submit" class="btn btn-default btnEdit">Save</button>
+		<button type="submit" onclick="processForm(event)" class="btn btn-default btnEdit">Save</button>
 	</form>
 	<div id="response">
 
@@ -93,7 +93,7 @@
 		})
 		.then(function(response) {
 			console.log(response);
-			var reply = "A new Givv Admin: " + response.info + " has been successfully added! Please give them their login information";
+			var reply = "A new Givv Admin: " + response.data.info + " has been successfully added! Please give them their login information";
 			document.getElementById("response").innerText = reply;
 		})
 		.catch(function(error) {
