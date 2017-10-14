@@ -20,22 +20,41 @@ router.get('/projects', function(req,res,next) {
   Project.find().then(projects => {
     return res.json(projects);
   })
+})
+
+router.get('/companies', function(req,res,next) {
+  Company.find().then(companies => {
+    return res.json(companies);
   })
-  
-  router.get('/companies', function(req,res,next) {
-    Company.find().then(companies => {
+})
+
+router.get('/company', function(req,res,next) {
+  if(req.body.companyName) {
+    Company.find({"name":req.body.companyName}).then(companies => {
       return res.json(companies);
     })
-  })
-  
-  router.get('/company', function(req,res,next) {
-    if(req.body.companyName) {
-      Company.find({"name":req.body.companyName}).then(companies => {
-        return res.json(companies);
-      })
 
-    }
-  })
+  }
+})
 
+router.get('/employee', function(req,res,next) {
+  if(req.body.email) {
+    User.find({"email": email}).then(user => {
+      if(user) {
+        Employee.find({"email": email}).then(employee => {
+          user.employee = employee;
+          return res.json(user);
+        })
+      }
+      return res.json(user);
+    })
+  }
+})
+
+router.get('/employees', function(req,res,next) {
+  if(req.body.companyCode) {
+    
+  }
+})
 
 module.exports = router;

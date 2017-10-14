@@ -22,6 +22,7 @@ var CompanySchema = new mongoose.Schema({
   companyCode: {
     type: String,
     unique: true,
+    index: true,
     required: true
   },
   shortDescription: String,
