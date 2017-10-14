@@ -8,60 +8,22 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 
 	<link rel = "stylesheet" href='../style.css'>
-    
-    <script>
-        function openNav() 
-        {
-            document.getElementById("mySidenav").style.width = "250px";
-        }
-        
-        function closeNav() 
-        {
-            document.getElementById("mySidenav").style.width = "0";
-        }
-    
-    </script>
 
-	<title>My Profile</title>
+	<title>New Profile</title>
 
 </head>	
 
 <body>
     
-<nav id="mySidenav" class="sidenav">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="#">Profile</a>
-    <a href="myProject.html">My Project</a>
-    <a href="selection.html">Browse</a>
-    <hr>
-    <a href="#">Your Donations &amp; Impact</a>
-    <a href="#">Company Donations &amp; Impact</a>
-    <hr>
-    <a href="settings.html">Settings</a>
-    <a href="#">Help &amp; Feedback</a>
-</nav>
-
 <header>
-
-    <a onclick="openNav()"><i class="glyphicon glyphicon-menu-hamburger"></i></a> 
-    
-    <h1>My Profile</h1>
+    <h1>Sign Up</h1>
 </header>
 
 	<div>
 
-		<img id = "employeeImg" src = "https://images.unsplash.com/photo-1442458370899-ae20e367c5d8?dpr=1&auto=compress,format&fit=crop&w=1934&h=&q=80&cs=tinysrgb&crop=">
+		<img id = "employeeImg" src = "https://openclipart.org/image/2400px/svg_to_png/157891/maleprofile.png">
 
 		<button class = "btn btn-default btnEdit" type = "button">Edit</button>
-
-		<div class="content">
-
-			<p>First Name: </p> 
-			<p>Last Name: </p>
-			<p>Email: </p>
-			<p>Password: </p>
-
-		</div>
 
 		<form class="formWrapper">
 		  <div class="form-group">
@@ -81,10 +43,8 @@
 		    <input type="password" class="form-control" id="pwd">
 		  </div>
 		  <div class="form-group">
-		      <label>Profile Picture:</label>
-              <form action="/action_page.php">
-                  <input type="file" name="pic" accept="image/*">
-              </form>
+		    <label>Profile Picture:</label>
+		    <input type="url" class="form-control" id="picture">
 		  </div>
 		  
 		  <button type="submit" class="btn btn-default btnEdit">Save</button>

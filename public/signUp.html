@@ -1,43 +1,15 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
-	<!-- Latest compiled and minified CSS -->
-	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 
-	  <!-- Optional theme -->
-	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-	  <!-- Latest compiled and minified JavaScript -->
-	  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
-
-	  <title>Create New Account</title>
-</head>
-
-<body>
-
-<h1>Create A New Account</h1>
-
-	<div id="main-content">
-		<form>
-			<p>First Name:<input type = "text" name = "fName" id = "firstName" class = "inputSignUp"></p>
-			<p>Last Name:<input type = "text" name = "lName" id = "lastName" class = "inputSignUp"></p>
-			<p>Email:<input type = "text" name = "eMail" id = "email" class = "inputSignUp"></p>
-			<p>User Name:<input type = "text" name = "userName" id = "userName" class = "inputSignUp"></p>
-			<p>Password:<input type = "text" name = "password" id = "password" class = "inputSignUp"></p>
-			<p>Company Code:<input type = "text" name = "coCode" id = "companyCode"  class = "inputSignUp"></p>
-			<input class = "btn btn-primary" type=button id = "signUpButton" onClick="processForm()" value='Sign Up'>
-		</form>
-	</div>
-
-<footer>
-
-	<div>
-		<p>Copyright Givv 2017</p>
-	</div>
-</footer>
-
-<script async src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<link rel = "stylesheet" href='style.css'>
+    
+    <script async src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script>
 	function processForm() {
 		console.log(document.getElementById("firstName"))
@@ -56,6 +28,55 @@
 		})
 	}
 </script>
+
+	<title>New Profile</title>
+
+</head>	
+
+<body>
+    
+<header>
+    <h1>Sign Up</h1>
+</header>
+
+	<div>
+
+		<img id = "employeeImg" src = "https://openclipart.org/image/2400px/svg_to_png/157891/maleprofile.png">
+
+		<form class="formWrapper">
+		  <div class="form-group">
+		    <label>First Name:</label>
+		    <input type="text" class="form-control" id="firstName">
+		  </div>
+		  <div class="form-group">
+		    <label>Last Name:</label>
+		    <input type="text" class="form-control" id="lastName">
+		  </div>
+		  <div class="form-group">
+		    <label for="email">Email:</label>
+		    <input type="email" class="form-control" id="email">
+		  </div>
+		  <div class="form-group">
+		    <label for="pwd">Password:</label>
+		    <input type="password" class="form-control" id="pwd">
+		  </div>
+		  <div class="form-group">
+		    <label>Profile Picture:</label>
+		    <form action="/action_page.php">
+                <input type="file" name="pic" accept="image/*">
+            </form>
+		  </div>
+		  
+		  <button type="submit" class="btn btn-default btnEdit">Save</button>
+		</form>
+
+	</div>
+
+<footer>
+
+	<p>&copy; Givv 2017</p>
+
+</footer> 
 
 </body>
 
