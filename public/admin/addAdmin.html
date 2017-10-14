@@ -75,7 +75,7 @@
 	<div id="response">
 
 	</div>
-	
+
 <footer>
 
 	<p>&copy; Givv 2017</p>
@@ -95,7 +95,7 @@
 		})
 		.then(function(response) {
 			console.log(response);
-			var reply = "A new Givv Admin: " + response.data.info.firstName + " " + response.data.info.lastName + 
+			var reply = "A new Employer Admin: " + response.data.info.firstName + " " + response.data.info.lastName + 
 			" has been successfully added! Please give them their login information: " + 
 			document.getElementById("adminEmail").value + " : " + document.getElementById("adminPassword").value + "!";
 			document.getElementById("response").innerText = reply;
