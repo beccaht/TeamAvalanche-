@@ -36,6 +36,7 @@ hr {
 .browserProject {
   position: relative;
   text-align: center;
+    color: rgb(258,258,258);
   margin: 10px 0;
 }
 
@@ -132,7 +133,7 @@ hr {
 	overflow: scroll;
 }
 
-#companyImg {
+#companyImg, .browserImg {
   display: block;
   margin: auto;
   width: 65%;
