@@ -37,16 +37,17 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/signup', bruteforce.prevent, function(req,res,next) {
-  console.log("Signing up a user!");
+  console.log("Signing up a user!", req.body);
   if (req.body.email &&
-    req.body.firstName &&
     req.body.password &&
-    req.body.lastName) {
+    req.body.roles) {
     var userData = {
       email: req.body.email,
-      firstName: req.body.firstName,
-      lastName: req.body.lastName,
       password: req.body.password,
+      roles: req.body.roles,
+      firstName: req.body.firstName || "",
+      lastName: req.body.lastName || "",
+      avatarUrl: req.body.avatarUrl || "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
     }
     //use schema.create to insert data into the db
     User.create(userData, function (err, user) {
