@@ -22,6 +22,12 @@ hr {
   margin:auto;
 }
 
+.btn-primary {
+  background-image: none;
+  background-color: rgb(68,84,106);   
+  border: rgb(68,84,106);
+}
+
 .browserProject {
   position: relative;
   text-align: center;
