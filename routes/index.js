@@ -22,6 +22,15 @@ router.get('/projects', function(req,res,next) {
   })
 })
 
+router.get('/project', function(req,res,next) {
+  if(req.body.title) {
+
+    Project.find({title: req.body.title}).then(project => {
+      return res.json(project);
+    })
+  }
+})
+
 router.get('/companies', function(req,res,next) {
   Company.find().then(companies => {
     return res.json(companies);
