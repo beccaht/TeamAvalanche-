@@ -103,10 +103,12 @@ router.post('/company', function (req, res, next) {
     req.body.companyLongDescription &&
     req.body.companyPic
   ) {
+    var companyCode = req.body.companyName.replace(" ", "_") + "1"
     var companyData = {
       name: req.body.companyName,
       website: req.body.companyWebsite,
       type: req.body.companyType,
+      companyCode: companyCode,
       shortDescription: req.body.companyShortDescription,
       longDescription: req.body.companyLongDescription,
       imageUrl: req.body.companyPic
