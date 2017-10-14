@@ -28,7 +28,7 @@
         }
     </script>
 
-	<title>Main Menu</title>
+	<title>My Donation Stats</title>
 
 </head>	
 
@@ -38,7 +38,7 @@
 
 		<a onclick="openNav()"><i class="glyphicon glyphicon-menu-hamburger"></i></a>
 
-		<img id = "logoImg" src = '../imgs/givvBlack.png'>
+		<h3>Company Details</h3>
 
 	</header>
 
@@ -49,13 +49,44 @@
 	    <a href="employeeBrowse.html">Projects</a>
 	</nav>
 
-	<div class = "adminButtons">
-	<a href = 'listOfCompanies.html'><button class = "btn btn-primary adminBtn" type = "btn">Companies</button></a>
+	<img class = "browserImg" src = "https://images.unsplash.com/photo-1496303861503-f6ec4e50034e?dpr=1&auto=compress,format&fit=crop&w=1950&h=&q=80&cs=tinysrgb&crop=">
+
+	<div id = "editDeleteBtn">
+		<button class = "btn btn-primary" type = "button"><span class = "glyphicon glyphicon-pencil"></span></button>
+		<button class = "btn btn-primary" type = "button"><span class = "glyphicon glyphicon-trash"></span></button>
 	</div>
 
-	<div class = "adminButtons">
-	<a href = ' '><button class = "btn btn-primary adminBtn" type = "btn">Projects</button></a>
+	<div class = "browserProject">
+
+		<h3><label><strong>Company Name</strong></label><br></h3>
+		<label>Company Website:</label><br>
+		<label>Company Type:</label><br>
+
+		<p>This is the description of the project.</p>
 	</div>
+
+	<div id="editForm" class="hidden">
+            <form class="formWrapper">
+              <div class="form-group">
+                <label>Company Name:</label>
+                <input type="text" class="form-control" id="firstName">
+              </div>
+              <div class="form-group">
+                <label for="url">Website:</label>
+                <input type="url" class="form-control" id="email">
+              </div>
+              <div class="form-group">
+                <label >Company Type:</label>
+                <input type="text" class="form-control" id="pwd">
+              </div>
+              <div class="form-group">
+                <label>Company Picture:</label>
+                <form action="/action_page.php">
+                      <input type="file" name="pic" accept="image/*">
+                </form>
+			   </div>
+	</div>
+
 
 <footer>
 
