@@ -1,3 +1,84 @@
+<!DOCTYPE html>
 <html>
+
+<head>
+
+	<meta name = "viewport" content = "width=device-width, intitial-scale=1.0">
+
+	<!-- Latest compiled and minified CSS -->
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	  <!-- Optional theme -->
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	  <!-- Latest compiled and minified JavaScript -->
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	
+	<link rel = "stylesheet" href='../style.css'>
+
+	<script>
+        function openNav() 
+        {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+        
+        function closeNav() 
+        {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+        
+        function unhide(clickedButton, divID) 
+        {
+            var item = document.getElementById(divID);
+            if(item.className=='hidden')
+            {
+                item.className = 'unhidden';
+                clickedButton.value = 'hide'
+            }
+            else
+            {
+                item.className = 'hidden';
+                clickedButton.value = 'unhide'
+            }
+        }
+    </script>
+
+	<title>Project</title>
+
+</head>	
+
+<body>
+
+	<header>
+
+		<a onclick="openNav()"><i class="glyphicon glyphicon-menu-hamburger"></i></a>
+
+		<img id = "logoImg" src = '../imgs/givvBlack.png'>
+
+	</header>
+
+	<nav id="mySidenav" class="sidenav">
+	    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	    <a href="employeeProfile.html">Companies</a>
+	    <a href="myProject.html">Projects</a>
+	</nav>
+
+	<div class="content">
+        <script>
+            document.write("<h1> projectTitle </h1>");
+            document.write("<img src=" + "imgUrl" + ">");
+            document.write("<p>Project Description:" + "shortDesc" + "</p>");
+            document.write("<button class = 'btn btn-default' type = 'button' onClick='unhide(this, 'longDesc')'>Read More</button>");
+            document.write("<div id='longDesc' class='hidden'><p>" + "longDesc" + "</p></div>");
+        </script>
+	</div>
+
+<footer>
+
+	<p>&copy; Givv 2017</p>
+
+</footer> 
+
+</body>
 
 </html>
