@@ -3,7 +3,6 @@
 
 <head>
 
-<meta name = "viewport" content = "width=device-width, intitial-scale=1.0">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
@@ -30,17 +29,13 @@
 <body>
     
 <nav id="mySidenav" class="sidenav">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="employeeProfile.html">Profile</a>
-    <a href="myProject.html">My Project</a>
-    <a href="employeeBrowse.html">Browse</a>
-    <hr>
-    <a href="employeeStats.html">Your Donations &amp; Impact</a>
-    <a href="empCompanyStats.html">Company Donations &amp; Impact</a>
-    <hr>
-    <a href="settings.html">Settings</a>
-    <a href="feedback.html">Help &amp; Feedback</a>
-</nav>
+	    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">Company Projects</a>
+	    <a href="employerBrowse.html">Browse</a>
+        <hr>        
+	    <a href="#">Company Information</a>
+	    <a href="#">Company Donations &amp; Impact</a>
+	</nav>
 
 <header>
 
@@ -51,35 +46,35 @@
 
 	<div>
 
-		<img id = "employeeImg" src = "https://images.unsplash.com/photo-1442458370899-ae20e367c5d8?dpr=1&auto=compress,format&fit=crop&w=1934&h=&q=80&cs=tinysrgb&crop=">
+		<img id = "employerImg" src = "https://images.unsplash.com/photo-1442458370899-ae20e367c5d8?dpr=1&auto=compress,format&fit=crop&w=1934&h=&q=80&cs=tinysrgb&crop=">
 
 		<button class = "btn btn-default btnEdit" type = "button">Edit</button>
 
 		<div class="content">
 
-			<p>First Name: </p> 
-			<p>Last Name: </p>
-			<p>Email: </p>
-			<p>Password: </p>
+			<p>Name: </p> 
+			<p>Website: </p>
+			<p>Type: </p>
+			<p>Number of Employees: </p>
 
 		</div>
 
 		<form class="formWrapper">
 		  <div class="form-group">
-		    <label>First Name:</label>
-		    <input type="text" class="form-control" id="firstName">
+		    <label>Name:</label>
+		    <input type="text" class="form-control" id="compName">
 		  </div>
 		  <div class="form-group">
-		    <label>Last Name:</label>
-		    <input type="text" class="form-control" id="lastName">
+		    <label>Website:</label>
+		    <input type="url" class="form-control" id="website">
 		  </div>
 		  <div class="form-group">
-		    <label for="email">Email:</label>
-		    <input type="email" class="form-control" id="email">
+		    <label for="email">Type:</label>
+		    <input type="text" class="form-control" id="compType">
 		  </div>
 		  <div class="form-group">
-		    <label for="pwd">Password:</label>
-		    <input type="password" class="form-control" id="pwd">
+		    <label for="pwd">Number of Employees:</label>
+		    <input type="number" class="form-control" id="numEmps">
 		  </div>
 		  <div class="form-group">
 		      <label>Profile Picture:</label>
