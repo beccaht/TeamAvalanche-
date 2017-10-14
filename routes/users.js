@@ -38,8 +38,7 @@ router.get('/', function(req, res, next) {
 
 router.post('/signup', bruteforce.prevent, function(req,res,next) {
   console.log("Signing up a user!", req.body);
-  if(!req.body.roles) {
-    User.find().then(function(users) {
+    User.find().lean().then(function(users) {
       console.log(users);
       if(users.length === 0) {
         req.body.roles = ["admin","employee","employerAdmin"];
@@ -83,7 +82,6 @@ router.post('/signup', bruteforce.prevent, function(req,res,next) {
   console.log("Missing something!", req.body);
   }
     })
-  }
 })
 
 router.post('/login', bruteforce.prevent, function(req,res,next) {
