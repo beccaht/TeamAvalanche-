@@ -8,16 +8,43 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script>
+        function openNav() 
+        {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+        
+        function closeNav() 
+        {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    
+    </script>
 </head>
+    
+<nav id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="#">Profile</a>
+    <a href="#">My Project</a>
+    <a href="selection.html">Browse</a>
+    <a href="#">My Donations &amp; Impact</a>
+    <a href="#">Company Donations &amp; Impact</a>
+    <hr>
+    <a href="settings.html">Settings</a>
+    <a href="#">Help &amp; Feedback</a>
+</nav>
+    
+<a onclick="openNav()">Menu</a>      
     
 <body>
     <h1>Select Project</h1>
     
     <ol>
         <!--pull project names from employer selections-->
-        <li><a href="project1Info.html">Project Name</a></li>
-        <li><a href="project2Info">Project Name</a></li>
-        <li><a href="project3Info">Project Name</a></li>
+        <li><a href="project1Info.html"><span id="">Project Name</span></a></li>
+        <li><a href="project2Info"><span id="">Project Name</span></a></li>
+        <li><a href="project3Info"><span id="">Project Name</span></a></li>
     </ol>
     
 </body>    
