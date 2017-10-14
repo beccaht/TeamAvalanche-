@@ -5,6 +5,7 @@
 
 <meta name = "viewport" content = "width=device-width, intitial-scale=1.0">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 
@@ -20,7 +21,29 @@
         {
             document.getElementById("mySidenav").style.width = "0";
         }
-    
+        
+        function unhide(clickedButton, divID) 
+        {
+            var item = document.getElementById(divID);
+            if(item.className=='hidden')
+            {
+                item.className = 'unhidden';
+                clickedButton.value = 'hide'
+            }
+            else
+            {
+                item.className = 'hidden';
+                clickedButton.value = 'unhide'
+            }
+        }
+        
+        function updateInfo()
+        {
+            var firstName = document.getElementById('firstName');
+            var lastName = document.getElementById('lastName');
+            var email = document.getElementById('email');
+            var password = document.getElementById('pwd');
+        }
     </script>
 
 	<title>My Profile</title>
@@ -53,7 +76,7 @@
 
 		<img id = "employeeImg" src = "https://images.unsplash.com/photo-1442458370899-ae20e367c5d8?dpr=1&auto=compress,format&fit=crop&w=1934&h=&q=80&cs=tinysrgb&crop=">
 
-		<button class = "btn btn-default btnEdit" type = "button">Edit</button>
+		<button class = "btn btn-default btnEdit" type = "button" onClick="unhide(this, 'editForm')">Edit</button>
 
 		<div class="content">
 
@@ -64,32 +87,35 @@
 
 		</div>
 
-		<form class="formWrapper">
-		  <div class="form-group">
-		    <label>First Name:</label>
-		    <input type="text" class="form-control" id="firstName">
-		  </div>
-		  <div class="form-group">
-		    <label>Last Name:</label>
-		    <input type="text" class="form-control" id="lastName">
-		  </div>
-		  <div class="form-group">
-		    <label for="email">Email:</label>
-		    <input type="email" class="form-control" id="email">
-		  </div>
-		  <div class="form-group">
-		    <label for="pwd">Password:</label>
-		    <input type="password" class="form-control" id="pwd">
-		  </div>
-		  <div class="form-group">
-		      <label>Profile Picture:</label>
-              <form action="/action_page.php">
-                  <input type="file" name="pic" accept="image/*">
-              </form>
-		  </div>
+        <div id="editForm" class="hidden">
+            <form class="formWrapper">
+              <div class="form-group">
+                <label>First Name:</label>
+                <input type="text" class="form-control" id="firstName">
+              </div>
+              <div class="form-group">
+                <label>Last Name:</label>
+                <input type="text" class="form-control" id="lastName">
+              </div>
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email">
+              </div>
+              <div class="form-group">
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" id="pwd">
+              </div>
+              <div class="form-group">
+                <label>Profile Picture:</label>
+                <form action="/action_page.php">
+                      <input type="file" name="pic" accept="image/*">
+                </form>
+		      </div>
 		  
-		  <button type="submit" class="btn btn-default btnEdit">Save</button>
-		</form>
+		      <button type="submit" class="btn btn-default btnEdit" onClick="unhide(this, 'editForm'); updateInfo();">Save</button>
+		  </form>
+        </div>
+		
 
 	</div>
 
