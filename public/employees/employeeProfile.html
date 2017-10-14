@@ -99,24 +99,23 @@
             <form class="formWrapper">
               <div class="form-group">
                 <label>First Name:</label>
-                <input type="text" class="form-control" id="firstName">
+                <input type="text" class="form-control" id="eFirstName">
               </div>
               <div class="form-group">
                 <label>Last Name:</label>
-                <input type="text" class="form-control" id="lastName">
+                <input type="text" class="form-control" id="eLastName">
               </div>
               <div class="form-group">
                 <label for="email">Email:</label>
-                <input type="email" class="form-control" id="email">
+                <input type="email" class="form-control" id="eEmail">
               </div>
               <div class="form-group">
                 <label for="pwd">Password:</label>
-                <input type="password" class="form-control" id="pwd">
+                <input type="password" class="form-control" id="ePwd">
               </div>
               <div class="form-group">
                 <label>Profile Picture:</label>
-                <form action="/action_page.php">
-                      <input type="file" name="pic" accept="image/*">
+                      <input type="file" id="ePic">
                 </form>
 		      </div>
 		  
@@ -132,6 +131,27 @@
 	<p>&copy; Givv 2017</p>
 
 </footer> 
+
+<script async src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+	function processForm(event) {
+		event.preventDefault();
+		console.log(document.getElementById("eFirstName"))
+		axios.post('https://givv.jnielson.com/users/edit', {
+			eFirstName: document.getElementById("eFirstName").value,
+			eLastName: document.getElementById("eLastName").value,
+			eEmail: document.getElementById("eEmail").value,
+			ePwd: document.getElementById("ePwd").value,
+		})
+		.then(function(response) {
+			console.log(response);
+			window.location.href = response.data.data;
+		})
+		.catch(function(error) {
+			console.log(error);
+		})
+	}
+</script>
 
 </body>
 

@@ -66,8 +66,12 @@
 				<input type = "text" class="form-control" id = "companyType">
 		</div>
 		<div class= "form-group">
-			<label>Description:</label>
-				<input type = "text" class="form-control" id = "companyDescription">
+			<label>Brief Description:</label>
+				<input type = "text" class="form-control" id = "companyShortDescription">
+		</div>
+		<div class= "form-group">
+			<label>Extended Description:</label>
+				<input type = "text" class="form-control" id = "companyLongDescription">
 		</div>
 		<div class="form-group">
 		    <label>Company Picture:</label>
@@ -82,6 +86,28 @@
 	<p>&copy; Givv 2017</p>
 
 </footer> 
+
+<script async src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+	function processForm(event) {
+		event.preventDefault();
+		console.log(document.getElementById("companyName"))
+		axios.post('https://givv.jnielson.com/admin/company', {
+			companyName: document.getElementById("companyName").value,
+			companyWebsite: document.getElementById("companyWebsite").value,
+			companyType: document.getElementById("companyType").value,
+			companyShortDescription: document.getElementById("companyShortDescription").value,
+			companyLongDescription: document.getElementById("companyLongDescription").value,
+			companyPic: document.getElementById("companyPic").value,
+		})
+		.then(function(response) {
+			console.log(response);
+		})
+		.catch(function(error) {
+			console.log(error);
+		})
+	}
+</script>
 
 </body>
 

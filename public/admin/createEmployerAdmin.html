@@ -65,6 +65,10 @@
 			<label>Email:</label>
 				<input type = "url" class="form-control" id = "EmployerAdministratorWebsite">
 		</div>
+		<div class="form-group">
+		    <label for="pwd">Password:</label>
+		    <input type="password" class="form-control" id="eaPwd">
+			</div>
 		<button type="submit" class="btn btn-default btnEdit">Save</button>
 	</form>
 
@@ -73,6 +77,27 @@
 	<p>&copy; Givv 2017</p>
 
 </footer> 
+
+<script async src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+	function processForm(event) {
+		event.preventDefault();
+		console.log(document.getElementById("eaFirstName"))
+		axios.post('https://givv.jnielson.com/admin/employer', {
+			eaFirstName: document.getElementById("eaFirstName").value,
+			eaLastName: document.getElementById("eaLastName").value,
+			eaEmail: document.getElementById("eaEmail").value,
+			eaPwd: document.getElementById("eaPwd").value,
+		})
+		.then(function(response) {
+			console.log(response);
+			window.location.href = response.data.data;
+		})
+		.catch(function(error) {
+			console.log(error);
+		})
+	}
+</script>
 
 </body>
 
