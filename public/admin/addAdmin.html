@@ -93,7 +93,7 @@
 		})
 		.then(function(response) {
 			console.log(response);
-			var reply = "A new Givv Admin: " + response.data.info + " has been successfully added! Please give them their login information";
+			var reply = "A new Givv Admin: " + response.data.info + " has been successfully added! Please give them their login information: " + document.getElementById("adminEmail").value + " : " + document.getElementById("adminPassword").value + "!";
 			document.getElementById("response").innerText = reply;
 		})
 		.catch(function(error) {

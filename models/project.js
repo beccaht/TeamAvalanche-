@@ -8,7 +8,7 @@ var ProjectSchema = new mongoose.Schema({
     index: true,
     trim: true
   },
-  logoUrl: {
+  companyPic: {
     type: String,
     required: true,
     trim: true
@@ -17,9 +17,8 @@ var ProjectSchema = new mongoose.Schema({
     type: String,
     trim: true
   },
-  information: {
-    type: [InformationObject],
-    required: false
+  longDescription: {
+    type: String,
   },
   goal: {
     type: Number
