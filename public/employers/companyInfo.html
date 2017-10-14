@@ -90,7 +90,7 @@
 	<div id="response">
 		
 			</div>
-			
+
 <footer>
 
 	<p>&copy; Givv 2017</p>
@@ -112,7 +112,8 @@
 		})
 		.then(function(response) {
 			console.log(response);
-			window.location.href = response.data.data;
+			var reply = "The information has been updated!";
+			document.getElementById("response").innerText = reply;
 		})
 		.catch(function(error) {
 			console.log(error);
