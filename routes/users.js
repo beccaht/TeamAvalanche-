@@ -60,9 +60,9 @@ router.post('/login', function(req,res,next) {
   });
 })
 
-
+router.use('/profile', requiresLogin);
 // GET route after registering
-router.get('/profile', mid.requiresLogin, function (req, res, next) {
+router.get('/profile', function (req, res, next) {
   User.findById(req.session.userId)
     .exec(function (error, user) {
       if (error) {
