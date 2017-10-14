@@ -1,3 +1,39 @@
+footer p {
+    color: rgb(61,191,179);
+    text-align: center;
+    margin: 40px 10px 40px 10px;
+}
+
+header {
+    text-align: center;
+    background-color: rgb(68,84,106);
+    color: white;
+    margin: 0;
+    margin-bottom: 30px;
+    padding: 20px;
+}
+
+#employeeImg {
+    width: 30%;
+    border-radius: 35%;
+    display: block;
+    margin: auto;
+}
+
+.btnEdit {
+    display: block;
+    position: relative;
+    left: 85%;
+}
+
+.content, .formWrapper {
+    margin: 45px;
+}
+
+.userInput {
+    margin: 5px;    
+}
+
 .sidenav {
     height: 100%; /* 100% Full-height */
     width: 0; /* 0 width - change this with JavaScript */
