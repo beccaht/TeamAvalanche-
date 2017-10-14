@@ -8,7 +8,36 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script>
+        function openNav() 
+        {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+        
+        function closeNav() 
+        {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    
+    </script>
 </head>
+
+<nav id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="#">Profile</a>
+    <a href="selection.html">Projects</a>
+    <a href="#">Your Donations &amp; Impact</a>
+    <a href="#">Company Donations &amp; Impact</a>
+    <hr>
+    <a href="#">Pay it forward</a>
+    <a href="#">Balance Payment</a>
+    <hr>
+    <a href="settings.html">Settings</a>
+    <a href="#">Help &amp; Feedback</a>
+</nav>
+    
+<a onclick="openNav()">Menu</a>    
     
 <body>
     <h1>Select Project</h1>
