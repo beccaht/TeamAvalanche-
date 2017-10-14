@@ -21,11 +21,10 @@ hr {
   display: block;
   margin-left: 80%;
   margin-top: 10px;
-}
-
-.btnSave {
-	display: block;
-	margin-left: 50%;
+  background-image: none;
+  background-color: rgb(68,84,106);   
+  border: rgb(68,84,106);
+	
 }
 
 .btn-primary {
