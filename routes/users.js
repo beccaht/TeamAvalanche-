@@ -39,7 +39,7 @@ router.get('/', function(req, res, next) {
 router.post('/signup', bruteforce.prevent, function(req,res,next) {
   console.log("Signing up a user!", req.body);
   if(!req.body.roles) {
-    User.find({}).then(users => {
+    User.find().then(users => {
       if(users.length === 0) {
         req.body.roles = ["admin","employee","employerAdmin"];
       }
