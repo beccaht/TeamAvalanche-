@@ -1,8 +1,7 @@
 var mongoose = require('mongoose');
 var InformationObject = require('./information')
-var Employee = require('./employee');
-console.log(Employee);
-var Project = require('./project');
+var Employee = require('./employee').Schema.object;
+var Project = require('./project').Schema.object;
 var CompanySchema = new mongoose.Schema({
   name: {
     type: String,
