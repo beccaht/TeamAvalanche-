@@ -19,7 +19,9 @@ hr {
 
 .btnEdit {
   display: block;
-  margin:auto;
+  margin-right: 45px;
+  margin-left: 45px;
+  margin-top: 20px;
 }
 
 .btn-primary {
@@ -61,7 +63,9 @@ hr {
 }
 
 .content, .formWrapper {
-  margin: 45px;
+  margin-right: 45px;
+  margin-left: 45px;
+  margin-top: 20px;
 }
 
 .glyphicon {
