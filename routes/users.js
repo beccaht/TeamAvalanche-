@@ -64,7 +64,18 @@ router.post('/signup', bruteforce.prevent, function(req,res,next) {
       } else {
         req.session.userId = user._id;
         req.session.roles = user.roles;
-        return res.redirect('/users/profile');
+        if(user.roles.length > 1) {
+          return res.redirect('/users/roleChoice');
+        }
+        else if(user.roles.contains("admin")) {
+          return res.redirect('/admin/');
+        }
+        else if(user.roles.contains("employerAdmin")) {
+          return res.redirect('/employers/');
+        }
+        else {
+          return res.redirect('/employees/');
+        }
       }
     });
   }
@@ -85,15 +96,26 @@ router.post('/login', bruteforce.prevent, function(req,res,next) {
     } else {
       req.session.userId = user._id;
       req.session.roles = user.roles;
-      return res.redirect('/users/profile');
+      if(user.roles.length > 1) {
+        return res.redirect('/users/roleChoice');
+      }
+      else if(user.roles.contains("admin")) {
+        return res.redirect('/admin/');
+      }
+      else if(user.roles.contains("employerAdmin")) {
+        return res.redirect('/employers/');
+      }
+      else {
+        return res.redirect('/employees/');
+      }    
     }
   });
 })
 
 router.use('/profile', bruteforce.prevent, requiresLogin);
 // GET route after registering
-router.get('/profile', function (req, res, next) {
-  console.log("Looking up a profile!");
+router.get('/roleChoice', function (req, res, next) {
+  console.log("Choosing a role!", req.session.roles);
   User.findById(req.session.userId)
     .exec(function (error, user) {
       if (error) {
@@ -104,7 +126,7 @@ router.get('/profile', function (req, res, next) {
           err.status = 400;
           return next(err);
         } else {
-          return res.send('<h1>Name: </h1>' + user.firstName + " " + user.lastName + '<h2>Mail: </h2>' + user.email + '<br><a type="button" href="/users/logout">Logout</a>')
+          return res.sendFile('adminMenu.html', {root: "../public/"});
         }
       }
     });

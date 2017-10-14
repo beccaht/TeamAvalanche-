@@ -14,13 +14,10 @@ function requireLogin(req, res, next) {
     }
   }
 
-console.log(path.join(__dirname,'..','public','employees'));
-router.use(express.static(path.join(__dirname,'..','public','employees')));
-
 router.use('/', requireLogin);
 /* GET home/login page. */
 router.get('/', function(req, res, next) {
-  res.sendFile('index.html', {'root': 'public'});
+  res.sendFile('myProject.html', {'root': '../public/employees'});
 });
 
 
