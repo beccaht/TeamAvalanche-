@@ -142,7 +142,7 @@ hr {
 }
 
 .browserProject a {
-	color: black;
+	color: white;
 }
 
 .browserDescription {
@@ -158,4 +158,9 @@ hr {
 
 .goalProgress {
 	margin: 10px 20px 10px 20px;
+}
+
+.centerThis {
+	text-align: center;
+	margin-top: 20px;
 }
