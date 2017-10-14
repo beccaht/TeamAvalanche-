@@ -26,9 +26,10 @@
         {
             document.getElementById("mySidenav").style.width = "0";
         }
+        
     </script>
 
-	<title>Browse Projects</title>
+	<title>My Donation Stats</title>
 
 </head>	
 
@@ -38,7 +39,7 @@
 
 		<a onclick="openNav()"><i class="glyphicon glyphicon-menu-hamburger"></i></a>
 
-		<h3>Browse Projects</h3>
+		<h3>My Donations</h3>
 
 	</header>
 
@@ -55,39 +56,30 @@
 	    <a href="#">Help &amp; Feedback</a>
 	</nav>
 
-	<div id = "allProjects">
+	<img id = "employeeImg" src = "https://images.unsplash.com/photo-1442458370899-ae20e367c5d8?dpr=1&auto=compress,format&fit=crop&w=1934&h=&q=80&cs=tinysrgb&crop=">
 
-		<div class = "browserProject">
-			<a href = ''><img class = "browserImg" src = "https://images.unsplash.com/photo-1496303861503-f6ec4e50034e?dpr=1&auto=compress,format&fit=crop&w=1950&h=&q=80&cs=tinysrgb&crop=">
-			<div class = "browserDescription">
-				<H5>Project 1</H5>
-				<p>
-					This is a great project choose this one.
-				</p></a>
-			</div>
-		</div>
-
-		<div class = "browserProject">
-			<a href = ''><img class = "browserImg" src = "https://images.unsplash.com/photo-1496303861503-f6ec4e50034e?dpr=1&auto=compress,format&fit=crop&w=1950&h=&q=80&cs=tinysrgb&crop=">
-			<div class = "browserDescription">
-				<H5>Project 1</H5>
-				<p>
-					This is a great project choose this one.
-				</p></a>
-			</div>
-		</div>
-
-		<div class = "browserProject">
-			<a href = ''><img class = "browserImg" src = "https://images.unsplash.com/photo-1496303861503-f6ec4e50034e?dpr=1&auto=compress,format&fit=crop&w=1950&h=&q=80&cs=tinysrgb&crop=">
-			<div class = "browserDescription">
-				<H5>Project 1</H5>
-				<p>
-					This is a great project choose this one.
-				</p></a>
-			</div>
-		</div>
-
+	<div class = "centerThis">
+		<h3><strong >Total Donated: </strong></h3>
 	</div>
+
+	<div class = "centerThis">
+		<p><strong>Current Project:</strong></p>
+		<div class="progress goalProgress">
+			  <div id = "progressBar" class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="70"
+			  aria-valuemin="0" aria-valuemax="100" style="width:70%; border-color: black;">
+			    Progress: $700 of $1,000
+			  </div>
+		</div> 
+	</div>
+	
+
+	<div class = "pastProject centerThis">
+		<p><strong>Project 1:</strong></p>
+		<p>Subtotal: </p>
+		
+	</div>
+
+	
 
 <footer>
 
