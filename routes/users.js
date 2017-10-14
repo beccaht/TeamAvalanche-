@@ -18,7 +18,9 @@ var bruteforce = new ExpressBrute(store, {
 
 //Our User model
 var User = require('../models/user')
-var Employee = require('../models/employee');
+var Employee = require('../models/employee')
+var Company = require('../models/company');
+var Project = require('../models/project');
 
 //Add this as a middleware if you need a route with login
 function requiresLogin(req, res, next) {
@@ -65,6 +67,10 @@ router.post('/signup', bruteforce.prevent, function (req, res, next) {
             return next(err)
           }
           else {
+            Company.find({companyCode: req.body.companyCode}).then(company => {
+              company.employees.push(employee);
+              company.save();
+            })
             req.session.employee = employee;
           }
         })
