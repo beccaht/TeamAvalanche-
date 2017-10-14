@@ -20,6 +20,11 @@ hr {
 .btnEdit {
   display: block;
   margin:auto;
+  margin-top: 10px;
+  background-image: none;
+  background-color: rgb(68,84,106);   
+  border: rgb(68,84,106);
+  color: white;
 }
 
 .btn-primary {
