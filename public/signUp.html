@@ -9,7 +9,7 @@
 	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
 	  <!-- Latest compiled and minified JavaScript -->
-	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
 
 	  <title>Create New Account</title>
 </head>
@@ -18,15 +18,15 @@
 
 <h1>Create A New Account</h1>
 
-	<div>
+	<div id="main-content">
 		<form>
-			<p>First Name:<input type = "text" name = "fName" class = "inputSignUp"></p>
-			<p>Last Name:<input type = "text" name = "lName" class = "inputSignUp"></p>
-			<p>Email:<input type = "text" name = "eMail" class = "inputSignUp"></p>
-			<p>User Name:<input type = "text" name = "userName" class = "inputSignUp"></p>
-			<p>Password:<input type = "text" name = "password" class = "inputSignUp"></p>
-			<p>Company Code:<input type = "text" name = "coCode" class = "inputSignUp"></p>
-			<input class = "btn btn-primary" type=button onClick="window.open('file://C:/Users/hilar/OneDrive/Documents/Givv App/ProfilePic.html')" value='Sign Up'>
+			<p>First Name:<input type = "text" name = "fName" id = "firstName" class = "inputSignUp"></p>
+			<p>Last Name:<input type = "text" name = "lName" id = "lastName" class = "inputSignUp"></p>
+			<p>Email:<input type = "text" name = "eMail" id = "email" class = "inputSignUp"></p>
+			<p>User Name:<input type = "text" name = "userName" id = "userName" class = "inputSignUp"></p>
+			<p>Password:<input type = "text" name = "password" id = "password" class = "inputSignUp"></p>
+			<p>Company Code:<input type = "text" name = "coCode" id = "companyCode"  class = "inputSignUp"></p>
+			<input class = "btn btn-primary" type=button id = "signUpButton" onClick="processForm()" value='Sign Up'>
 		</form>
 	</div>
 
@@ -36,6 +36,26 @@
 		<p>Copyright Givv 2017</p>
 	</div>
 </footer>
+
+<script async src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+	function processForm() {
+		console.log(document.getElementById("firstName"))
+		axios.post('https://ec2.jnielson.com:3000/users/signup', {
+			firstName: document.getElementById("firstName").value,
+			lastName: document.getElementById("lastName").value,
+			email: document.getElementById("email").value,
+      		password: document.getElementById("password").value,
+		})
+		.then(function(response) {
+			console.log(response);
+			document.getElementById("main-content").innerHTML = response.data;
+		})
+		.catch(function(error) {
+			console.log(error);
+		})
+	}
+</script>
 
 </body>
 

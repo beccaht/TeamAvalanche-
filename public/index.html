@@ -1,2 +1,62 @@
+<!DOCTYPE html>
 <html>
+<head>
+
+	<!-- Latest compiled and minified CSS -->
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	  <!-- Optional theme -->
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	  <!-- Latest compiled and minified JavaScript -->
+	  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+
+	  <title>Login to Givv</title>
+</head>
+
+<body>
+
+<h1>Login to Givv</h1>
+
+	<div id="main-content">
+		<form>
+			<p>Email:<input type = "text" name = "eMail" id = "email" class = "inputSignUp"></p>
+			<p>Password:<input type = "text" name = "password" id = "password" class = "inputSignUp"></p>
+            <input class = "btn btn-primary" type=button id = "loginButton" onClick="processForm()" value='Login'>
+            <input class = "btn btn-primary" type=button id = "signUpButton" onClick="goToSignup()" value='Sign Up'>
+        </form>
+	</div>
+
+<footer>
+
+	<div>
+		<p>Copyright Givv 2017</p>
+	</div>
+</footer>
+
+<script async src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+	function processForm() {
+		console.log(document.getElementById("firstName"))
+		axios.post('https://ec2.jnielson.com:3000/users/login', {
+			email: document.getElementById("email").value,
+      		password: document.getElementById("password").value,
+		})
+		.then(function(response) {
+            console.log(response);
+            document.getElementById("main-content").innerHTML = response.data;
+		})
+		.catch(function(error) {
+			console.log(error);
+		})
+    }
+    
+    function goToSignup() {
+        console.log("Switching to signup!");
+        window.location.pathname = "/signUp.html"
+    }
+</script>
+
+</body>
+
 </html>
