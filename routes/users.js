@@ -2,14 +2,21 @@ var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
 var cors = require('cors');
-var BSON = require('bson');
 var bcrypt = require('bcrypt');
-var Long = BSON.long;
-var bson = new BSON();
+require('connect-flash');
+var ExpressBrute = require('express-brute');
+var MongoStore = require('express-brute-mongoose');
+var BruteForceSchema = require('express-brute-mongoose/dist/schema');
 
+var model = mongoose.model('bruteforce', BruteForceSchema)
+var store = new MongooseStore(model);
 
+var bruteforce = new ExpressBrute(store);
+
+//Our User model
 var User = require('../models/user')
 
+//Add this as a middleware if you need a route with login
 function requiresLogin(req, res, next) {
   console.log("This route requries login!");
   if (req.session && req.session.userId) {
@@ -26,7 +33,7 @@ router.get('/', function(req, res, next) {
   res.send('Hi!');
 });
 
-router.post('/signup', function(req,res,next) {
+router.post('/signup', bruteforce.prevent, function(req,res,next) {
   console.log("Signing up a user!");
   if (req.body.email &&
     req.body.firstName &&
@@ -50,7 +57,7 @@ router.post('/signup', function(req,res,next) {
   }
 })
 
-router.post('/login', function(req,res,next) {
+router.post('/login', bruteforce.prevent, function(req,res,next) {
   console.log("Logging in a User!");
   User.authenticate(req.body.email, req.body.password, function (error, user) {
     if (error || !user) {
@@ -64,7 +71,7 @@ router.post('/login', function(req,res,next) {
   });
 })
 
-router.use('/profile', requiresLogin);
+router.use('/profile', bruteforce.prevent, requiresLogin);
 // GET route after registering
 router.get('/profile', function (req, res, next) {
   console.log("Looking up a profile!");
