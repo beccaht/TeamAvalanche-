@@ -5,7 +5,7 @@ var cors = require('cors');
 var bcrypt = require('bcrypt');
 require('connect-flash');
 var ExpressBrute = require('express-brute');
-var MongoStore = require('express-brute-mongoose');
+var MongooseStore = require('express-brute-mongoose');
 var BruteForceSchema = require('express-brute-mongoose/dist/schema');
 
 var model = mongoose.model('bruteforce', BruteForceSchema)
