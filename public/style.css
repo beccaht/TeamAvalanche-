@@ -34,6 +34,11 @@ header {
     margin: 5px;    
 }
 
+.glyphicon {
+    float: left;
+    color: rgb(93,188,210);
+}
+
 .sidenav {
     height: 100%; /* 100% Full-height */
     width: 0; /* 0 width - change this with JavaScript */
@@ -41,7 +46,7 @@ header {
     z-index: 1; /* Stay on top */
     top: 0;
     left: 0;
-    background-color: #111; /* Black*/
+    background-color: rgb(258,258,258); /* Black*/
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 60px; /* Place content 60px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
@@ -51,7 +56,7 @@ header {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
-    color: #818181;
+    color: rgb(93,188,210);
     display: block;
     transition: 0.3s
 }
@@ -68,13 +73,17 @@ header {
     margin-left: 50px;
 }
 
-#main {
-    transition: margin-left .5s;
-    padding: 20px;
+.blue {
+    color: rgb(68,84,106);
 }
 
 hr {
-    border-color: 	#3DBFB3;
+    border-color: rgb(68,84,106);
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
 }
 
 @media screen and (max-height: 450px) {
