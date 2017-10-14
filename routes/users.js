@@ -39,16 +39,16 @@ router.get('/', function(req, res, next) {
 router.post('/signup', bruteforce.prevent, function(req,res,next) {
   console.log("Signing up a user!", req.body);
   if(!req.body.roles) {
-    User.find().then(users => {
+    User.find().then(function(users) {
+      console.log(users);
       if(users.length === 0) {
         req.body.roles = ["admin","employee","employerAdmin"];
       }
-    })
-  }
-  if (req.body.email &&
-    req.body.password &&
-    req.body.roles) {
-    var userData = {
+      console.log(req.body);
+      if (req.body.email &&
+        req.body.password &&
+        req.body.roles) {
+        var userData = {
       email: req.body.email,
       password: req.body.password,
       roles: req.body.roles,
@@ -56,6 +56,7 @@ router.post('/signup', bruteforce.prevent, function(req,res,next) {
       lastName: req.body.lastName || "",
       avatarUrl: req.body.avatarUrl || "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
     }
+    console.log(userData);
     //use schema.create to insert data into the db
     User.create(userData, function (err, user) {
       if (err) {
@@ -66,6 +67,11 @@ router.post('/signup', bruteforce.prevent, function(req,res,next) {
         return res.redirect('/users/profile');
       }
     });
+  }
+  else {
+  console.log("Missing something!", req.body);
+  }
+    })
   }
 })
 
