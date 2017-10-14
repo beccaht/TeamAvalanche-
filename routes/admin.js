@@ -123,4 +123,32 @@ router.post('/company', function (req, res, next) {
   }
 })
 
+router.post('/employer', function(req,res,next) {
+  if (req.body.eaEmail &&
+    req.body.eaPassword) {
+    var userData = {
+      email: req.body.eaEmail,
+      password: req.body.eaPassword,
+      roles: ["employerAdmin"],
+      firstName: req.body.eaFirstName || "",
+      lastName: req.body.eaLastName || "",
+      avatarUrl: req.body.avatarUrl || "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+    }
+    console.log(userData);
+    //use schema.create to insert data into the db
+    User.create(userData, function (err, user) {
+      if (err) {
+        return next(err)
+      } else {
+        res.json({
+          "info": user
+        })
+      }
+    });
+  }
+  else {
+    console.log("Missing something!", req.body);
+  }
+})
+
 module.exports = router;
