@@ -67,10 +67,20 @@
         <script>
             document.write("<h1> projectTitle </h1>");
             document.write("<img src=" + "imgUrl" + ">");
-            document.write("<p>Project Description:" + "shortDesc" + "</p>");
-            document.write("<button class = 'btn btn-default' type = 'button' onClick='unhide(this, 'longDesc')'>Read More</button>");
+            document.write("<p>Website: " + "webUrl" + "</p>");
+            document.write("<p>Type: " + "projType" + "</p>");
+            document.write("<p>Goal Amount: " + "goalAmount" + "</p>");
+            document.write("<p>Short Description: " + "shortDesc" + "</p>");
+        </script>
+        
+         <button class = 'btn btn-default' type = 'button' onClick='unhide(this, "longDesc")'>Read More</button>
+        
+        <script>
             document.write("<div id='longDesc' class='hidden'><p>" + "longDesc" + "</p></div>");
         </script>
+        
+        
+        
 	</div>
 
 <footer>
