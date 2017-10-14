@@ -5,17 +5,26 @@ var UserSchema = new mongoose.Schema({
     type: String,
     unique: true,
     required: true,
+    index: true,
     trim: true
   },
   password: {
     type: String,
     required: true,
   },
+  roles: {
+    type: [String],
+    required: true
+  },
   firstName: {
     type: String,
     trim: true
   },
   lastName: {
+    type: String,
+    trim: true
+  },
+  avatarUrl: {
     type: String,
     trim: true
   }
