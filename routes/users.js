@@ -11,7 +11,13 @@ var BruteForceSchema = require('express-brute-mongoose/dist/schema');
 var model = mongoose.model('bruteforce', BruteForceSchema)
 var store = new MongooseStore(model);
 
-var bruteforce = new ExpressBrute(store);
+var bruteforce = new ExpressBrute(store, {
+	freeRetries: 5,
+	minWait: 5*60*1000, // 5 minutes
+	maxWait: 60*60*1000, // 1 hour,
+	failCallback: failCallback,
+	handleStoreError: handleStoreError
+});
 
 //Our User model
 var User = require('../models/user')
