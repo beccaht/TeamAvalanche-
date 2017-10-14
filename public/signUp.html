@@ -18,7 +18,7 @@
 
 <h1>Create A New Account</h1>
 
-	<div>
+	<div id="main-content">
 		<form>
 			<p>First Name:<input type = "text" name = "fName" id = "firstName" class = "inputSignUp"></p>
 			<p>Last Name:<input type = "text" name = "lName" id = "lastName" class = "inputSignUp"></p>
@@ -49,6 +49,7 @@
 		})
 		.then(function(response) {
 			console.log(response);
+			document.getElementById("main-content").innerHTML = response.data;
 		})
 		.catch(function(error) {
 			console.log(error);
