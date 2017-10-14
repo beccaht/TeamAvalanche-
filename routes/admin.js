@@ -38,7 +38,7 @@ function requireLogin(req, res, next) {
 router.use('/', requireLogin);
 /* GET home/login page. */
 router.get('/', function(req, res, next) {
-  res.sendFile('menu.html', {'root': '../public/admin'});
+  res.sendFile('admin/menu.html', {'root': 'public'});
 });
 
 router.post('/admin', function(req,res,next) {
