@@ -9,7 +9,8 @@ var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
 
 //connect to MongoDB
-mongoose.connect('mongodb://localhost/givvapp');
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://localhost/givvapp', { useMongoClient: true });
 var db = mongoose.connection;
 
 //handle mongo error
