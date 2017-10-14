@@ -19,6 +19,9 @@ var CompanySchema = new mongoose.Schema({
     type: String,
     trim: true
   },
+  shortDescription: String,
+  longDescription: String,
+  imageUrl: String,
   numEmployees: {
     type: String,
     trim: true

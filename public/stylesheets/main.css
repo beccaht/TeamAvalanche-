@@ -19,12 +19,17 @@ hr {
 
 .btnEdit {
   display: block;
+<<<<<<< HEAD
   margin:auto;
   margin-top: 10px;
   background-image: none;
   background-color: rgb(68,84,106);   
   border: rgb(68,84,106);
   color: white;
+=======
+  margin-left: 80%;
+  margin-top: 10px;
+>>>>>>> 0afbc87197f86798becb114a116e75f6926cc9f3
 }
 
 .btn-primary {
@@ -66,7 +71,9 @@ hr {
 }
 
 .content, .formWrapper {
-  margin: 45px;
+  margin-right: 45px;
+  margin-left: 45px;
+  margin-top: 20px;
 }
 
 .glyphicon {
