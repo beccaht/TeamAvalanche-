@@ -158,10 +158,13 @@ hr {
     transform: translate(-50%, -50%);
 }
 
-#allProjects {
+#allProjects, #allCompanies {
 	overflow: scroll;
 }
 
+#allCompanies p {
+    text-align: center;
+}
 .goalProgress {
 	margin: 10px 20px 10px 20px;
 }
@@ -170,3 +173,19 @@ hr {
 	text-align: center;
 	margin-top: 20px;
 }
+
+#logoImg {
+    width: 40%;
+}
+
+.btn {
+    display: block;
+    width: 50%;
+    height: 20%;
+    margin: auto;
+    margin-top: 50px;
+    background-color:rgb(68,84,106); 
+    font-size: 26px;
+
+}
+
