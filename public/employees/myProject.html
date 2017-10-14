@@ -4,6 +4,7 @@
 
 <head>
     <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Project</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -19,7 +20,20 @@
         {
             document.getElementById("mySidenav").style.width = "0";
         }
-    
+        
+        function moveBar()
+        {
+            var percent = 0;
+            document.querySelector("#myBar").style.width = percent + "%";
+            
+            function increase()
+            {
+            percent = ((currentDonations / projectGoal) * 10);
+            document.querySelector("#myBar").style.width = percent + "%";
+            }
+        }
+        
+        Window.onload = moveBar;
     </script>
 </head>
     
@@ -37,23 +51,36 @@
     <a href="#">Help &amp; Feedback</a>
 </nav>
     
-<a onclick="openNav()"><i class="glyphicon glyphicon-menu-hamburger"></i></a> 
+<header>
+
+    <a onclick="openNav()"><i class="glyphicon glyphicon-menu-hamburger"></i></a> 
     
-    <h1><span id="myProject">Project Name</span></h1>
+    <h1>Project Name</h1>
+</header>
     
+<div class="content">
     <img src="#" />
     
     <!--progress bar-->
+    <div id="myProgress">
+        <div id="myBar"></div>
+    </div>
     
     <p id="shortDesc">This is the shorter description for the project.</p>
     
    <!-- write code so that the longer description only shows after button is clicked-->
     
-    Read More
+    <p><span onClick="">Read More</span></p>
     
     <p id="longDesc">This is the longer description</p>
+</div>
     
     
+<footer>
+
+	<p>&copy; Givv 2017</p>
+
+</footer>   
     
 </body>    
     
