@@ -8,6 +8,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 
 	<link rel = "stylesheet" href='stylesheets/main.css'>
+	<link rel = "stylesheet" href='stylesheets/employee.css'>
 
 	<title>New Profile</title>
 
@@ -47,7 +48,7 @@
             </form>
 		  </div>
 		  
-		  <button type="submit" class="btn btn-default btnEdit">Save</button>
+		  <button type="submit" onclick="processForm(event)" class="btn btn-default btnEdit">Save</button>
 		</form>
 
 	</div>
@@ -60,7 +61,8 @@
 
 <script async src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script>
-	function processForm() {
+	function processForm(event) {
+		event.preventDefault();
 		console.log(document.getElementById("firstName"))
 		axios.post('https://givv.jnielson.com/users/signup', {
 			firstName: document.getElementById("firstName").value,
