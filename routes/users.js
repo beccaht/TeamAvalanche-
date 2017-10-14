@@ -11,6 +11,7 @@ var bson = new BSON();
 var User = require('../models/user')
 
 function requiresLogin(req, res, next) {
+  console.log("This route requries login!");
   if (req.session && req.session.userId) {
     return next();
   } else {
@@ -26,6 +27,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/signup', function(req,res,next) {
+  console.log("Signing up a user!");
   if (req.body.email &&
     req.body.firstName &&
     req.body.password &&
@@ -48,6 +50,7 @@ router.post('/signup', function(req,res,next) {
 })
 
 router.post('/login', function(req,res,next) {
+  console.log("Logging in a User!");
   User.authenticate(req.body.email, req.body.password, function (error, user) {
     if (error || !user) {
       var err = new Error('Wrong email or password.');
@@ -63,6 +66,7 @@ router.post('/login', function(req,res,next) {
 router.use('/profile', requiresLogin);
 // GET route after registering
 router.get('/profile', function (req, res, next) {
+  console.log("Looking up a profile!");
   User.findById(req.session.userId)
     .exec(function (error, user) {
       if (error) {
@@ -81,6 +85,7 @@ router.get('/profile', function (req, res, next) {
 
 // GET for logout logout
 router.get('/logout', function (req, res, next) {
+  console.log("Logging out a user!");
   if (req.session) {
     // delete session object
     req.session.destroy(function (err) {
