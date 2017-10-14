@@ -125,6 +125,12 @@ hr {
 	overflow: scroll;
 }
 
+#companyImg {
+  display: block;
+  margin: auto;
+  width: 65%;
+}
+
 #logoImg {
   width: 15%;
 }
