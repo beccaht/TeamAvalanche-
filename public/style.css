@@ -128,3 +128,34 @@ hr {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
 }
+
+.browserImg {
+	width: 55%;
+	display: block;
+	margin: auto;
+}
+
+.browserProject {
+	position: relative;
+	text-align: center;
+	margin: 10px 0;
+}
+
+.browserProject a {
+	color: black;
+}
+
+.browserDescription {
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#allProjects {
+	overflow: scroll;
+}
+
+.goalProgress {
+	margin: 10px 20px 10px 20px;
+}
