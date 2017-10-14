@@ -119,6 +119,10 @@ hr {
 	overflow: scroll;
 }
 
+#logoImg {
+  width: 40%;
+}
+
 #main {
   transition: margin-left .5s;
   padding: 20px;
