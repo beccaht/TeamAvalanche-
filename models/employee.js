@@ -1,10 +1,14 @@
 var mongoose = require('mongoose');
-var DonationObject = require('./donation')
+var DonationSchema = require('./donation')
 var EmployeeSchema = new mongoose.Schema({
+  email: {
+    type: String,
+    required: true
+  },
   company: String,
   projectChosen: String,
   donations: {
-      type: [DonationObject]
+      type: [DonationSchema]
   }
 });
 
