@@ -67,10 +67,10 @@ router.post('/signup', bruteforce.prevent, function(req,res,next) {
         if(user.roles.length > 1) {
           return res.redirect('/users/roleChoice');
         }
-        else if(user.roles.contains("admin")) {
+        else if(user.roles.includes("admin")) {
           return res.redirect('/admin/');
         }
-        else if(user.roles.contains("employerAdmin")) {
+        else if(user.roles.includes("employerAdmin")) {
           return res.redirect('/employers/');
         }
         else {
@@ -99,10 +99,10 @@ router.post('/login', bruteforce.prevent, function(req,res,next) {
       if(user.roles.length > 1) {
         return res.redirect('/users/roleChoice');
       }
-      else if(user.roles.contains("admin")) {
+      else if(user.roles.includes("admin")) {
         return res.redirect('/admin/');
       }
-      else if(user.roles.contains("employerAdmin")) {
+      else if(user.roles.includes("employerAdmin")) {
         return res.redirect('/employers/');
       }
       else {
