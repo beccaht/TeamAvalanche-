@@ -22,11 +22,14 @@ header {
 
 .btnEdit {
     display: block;
-    margin:auto;
+    margin:80%;
+    margin-top: 20px;
 }
 
 .content, .formWrapper {
-    margin: 45px;
+    margin-right: 45px;
+    margin-left: 45px;
+    margin-top: 0px;
 }
 
 .userInput {
