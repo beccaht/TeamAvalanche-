@@ -15,8 +15,6 @@ var bruteforce = new ExpressBrute(store, {
 	freeRetries: 5,
 	minWait: 5*60*1000, // 5 minutes
 	maxWait: 60*60*1000, // 1 hour,
-	failCallback: failCallback,
-	handleStoreError: handleStoreError
 });
 
 //Our User model
