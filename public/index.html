@@ -10,21 +10,40 @@
 
 	  <!-- Latest compiled and minified JavaScript -->
 	  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
-
-	  <title>Login to Givv</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <script> 
+        function goToSignUp()
+        {
+            window.location.href = "#";
+        }
+    </script>
+    
+    <title>Login to Givv</title>
 </head>
 
 <body>
+<header>
+    <h1>Login to Givv</h1>
+</header>
 
-<h1>Login to Givv</h1>
 
-	<div id="main-content">
-		<form>
-			<p>Email:<input type = "text" name = "eMail" id = "email" class = "inputSignUp"></p>
-			<p>Password:<input type = "text" name = "password" id = "password" class = "inputSignUp"></p>
-            <input class = "btn btn-primary" type=button id = "loginButton" onClick="processForm()" value='Login'>
-            <input class = "btn btn-primary" type=button id = "signUpButton" onClick="goToSignup()" value='Sign Up'>
-        </form>
+	<div id="main-content" class="content">
+		<form class="formWrapper">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email">
+            </div>
+            <div class="form-group">
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" id="pwd">
+            </div>
+
+            <button type="submit" class="btn btn-default" id="loginButton" onCLick="processForm()">Login</button>
+            <button type="submit" class="btn btn-default" id="signUpButton" onClick="goToSignUp()">Sign Up</button>
+            
+		</form>
 	</div>
 
 <footer>
