@@ -1,0 +1,30 @@
+
+
+.adminBtn {
+    display: block;
+    width: 50%;
+    height: 20%;
+    margin: auto;
+    margin-top: 50px;
+    background-color: rgb(68,84,106); 
+    font-size: 26px;
+
+}
+
+
+#allCompanies p {
+    text-align: center;
+}
+
+#editDeleteBtn {
+    text-align: center;
+    margin: 10px;
+}
+
+#editDeleteBtn button {
+    background-color: rgb(68,84,106);
+}
+
+
+
+

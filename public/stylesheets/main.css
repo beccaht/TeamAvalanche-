@@ -1,0 +1,126 @@
+footer p {
+  color: rgb(61,191,179);
+  text-align: center;
+  margin: 40px 10px 40px 10px;
+}
+
+header {
+  text-align: center;
+  background-color: rgb(68,84,106);
+  color: white;
+  margin: 0;
+  margin-bottom: 30px;
+  padding: 20px;
+}
+
+hr {
+  border-color: rgb(68,84,106);
+}
+
+.btnEdit {
+  display: block;
+  margin:auto;
+}
+
+.browserProject {
+  position: relative;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.browserProject a {
+  color: white;
+}
+
+.browserDescription {
+  position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.blackBack {
+  background-color: rgb(0,0,0);
+  opacity: .95;
+  padding: 10px;
+}
+
+.blue {
+  color: rgb(68,84,106);
+}
+
+
+.centerThis {
+	text-align: center;
+	margin-top: 20px;
+}
+
+.content, .formWrapper {
+  margin: 45px;
+}
+
+.glyphicon {
+  float: left;
+  color: rgb(93,188,210);
+  font-size: 30px;
+  line-height: 2;
+}
+
+.goalProgress {
+	margin: 10px 20px 10px 20px;
+}
+
+
+.userInput {
+  margin: 5px;    
+}
+
+/** Sidenav styles **/
+.sidenav {
+  height: 100%; 
+  width: 0; 
+  position: fixed; 
+  z-index: 1; 
+  top: 0;
+  left: 0;
+  background-color: rgb(258,258,258); 
+  overflow-x: hidden; 
+  padding-top: 60px; 
+  transition: 0.5s; 
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: rgb(93,188,210);
+  display: block;
+  transition: 0.3s
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+
+#allProjects, #allCompanies {
+	overflow: scroll;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+}
+

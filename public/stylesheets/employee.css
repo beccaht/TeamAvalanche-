@@ -1,0 +1,39 @@
+
+.projectTitle { 
+    position: relative; 
+    width: 100%;
+    margin: auto;
+    margin-bottom: 35px;
+}
+
+.projectTitle img {
+    width: 100%;
+}
+
+.projectTitle h2 { 
+    position: absolute; 
+    bottom: 5%; 
+    left: 0; 
+    width: 100%; 
+    color: rgb(258,258,258);
+    text-align: left;
+}
+
+#employeeImg {
+    width: 30%;
+    border-radius: 35%;
+    display: block;
+    margin: auto;
+}
+
+#myProgress {
+    width: 100%;
+    background-color: grey;
+    margin-bottom: 35px;
+}
+
+#myBar {
+    width: 0%;
+    height: 30px;
+    background-color: rgb(68,84,106);
+}
