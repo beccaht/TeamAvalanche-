@@ -27,6 +27,14 @@
         {
             document.getElementById("mySidenav").style.width = "0";
         }
+
+		function updateProgressBar(goal, current)
+		{
+			percentage = current/goal;
+			document.getElementById("progressBar").style.width = percentage + "%";
+
+
+		}
         
     </script>
 
