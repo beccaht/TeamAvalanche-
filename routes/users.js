@@ -66,7 +66,7 @@ router.post('/login', bruteforce.prevent, function(req,res,next) {
       return next(err);
     } else {
       req.session.userId = user._id;
-      return res.redirect('/profile');
+      return res.redirect('/users/profile');
     }
   });
 })
