@@ -13,13 +13,6 @@
     
     <link rel="stylesheet" href="style.css">
     
-    <script> 
-        function goToSignUp()
-        {
-            window.location.href = "#";
-        }
-    </script>
-    
     <title>Login to Givv</title>
 </head>
 
@@ -40,8 +33,8 @@
                 <input type="password" class="form-control" id="pwd">
             </div>
 
-            <button type="submit" class="btn btn-default" id="loginButton" onCLick="processForm()">Login</button>
-            <button type="submit" class="btn btn-default" id="signUpButton" onClick="goToSignUp()">Sign Up</button>
+            <button type="btn" class="btn btn-default" id="loginButton" onCLick="processForm()">Login</button>
+            <button type="btn" class="btn btn-default" id="signUpButton" onClick="goToSignUp()">Sign Up</button>
             
 		</form>
 	</div>
@@ -55,7 +48,8 @@
 
 <script async src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script>
-	function processForm() {
+	function processForm() 
+    {
 		console.log(document.getElementById("firstName"))
 		axios.post('https://givv.jnielson.com/users/login', {
 			email: document.getElementById("email").value,
@@ -69,6 +63,11 @@
 			console.log(error);
 		})
     }
+    
+    function goToSignUp()
+        {
+            window.location.href = 'signUp.html';
+        }
 </script>
 
 </body>
