@@ -21,6 +21,21 @@
         {
             document.getElementById("mySidenav").style.width = "0";
         }
+        
+        function unhide(clickedButton, divID) 
+        {
+            var item = document.getElementById(divID);
+            if(item.className=='hidden')
+            {
+                item.className = 'unhidden';
+                clickedButton.value = 'hide'
+            }
+            else
+            {
+                item.className = 'hidden';
+                clickedButton.value = 'unhide'
+            }
+        }
 
     </script>
 </head>
@@ -60,13 +75,13 @@
         <div id="myBar"></div>
     </div>
     
-    <p id="shortDesc">This is the shorter description for the project.</p>
+    <p id="shortDesc"><script>document.write("shortDescription");</script></p>
     
    <!-- write code so that the longer description only shows after button is clicked-->
     
-    <p><span onClick="">Read More</span></p>
+    <a><span onClick="unhide('this', 'longDesc')">Read More</span></a>
     
-    <p id="longDesc">This is the longer description</p>
+    <p id="longDesc" class="hidden"><script>document.write("longDescription");</script></p>
 </div>
     
     
