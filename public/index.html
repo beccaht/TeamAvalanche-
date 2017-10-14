@@ -38,7 +38,7 @@
 <script>
 	function processForm() {
 		console.log(document.getElementById("firstName"))
-		axios.post('http://ec2.jnielson.com:3000/users/login', {
+		axios.post('https://ec2.jnielson.com:3000/users/login', {
 			email: document.getElementById("email").value,
       		password: document.getElementById("password").value,
 		})
