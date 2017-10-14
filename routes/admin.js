@@ -69,9 +69,58 @@ console.log("Missing something!", req.body);
 }
 })
 
-/* GET signup page */
-router.get('/signUp.html', function(req, res, next) {
-  res.sendFile('signUp.html', {'root': 'public'});
-});
+router.post('/project', function(req, res, next) {
+  if(req.body.projectName && 
+     req.body.projectWebsite && 
+     req.body.projectBriefDescription &&
+     req.body.projectLongDescription &&
+     req.body.companyPic) {
+       var projectData = {
+         title: req.body.projectName,
+         companyPic: req.body.companyPic,
+         shortDescription: req.body.projectBriefDescription,
+         longDescription: req.body.projectLongDescription,
+         goal: req.body.projectGoal
+       }
+       console.log(projectData);
+       Project.create(projectData, function(err, project) {
+         if(err) return next(err);
+         return res.json({
+           "info": project
+         })
+       })
+     }
+     else {
+       console.log("missing something? ", req.body);
+     }
+})
+
+router.post('/company', function(req, res, next) {
+  if(req.body.companyName  &&
+    req.body.companyWebsite  &&
+    req.body.companyType  &&
+    req.body.companyShortDescription  &&
+    req.body.companyLongDescription  &&
+    req.body.companyPic  
+    ) {
+      var companyData = {
+        name: req.body.companyName,
+        website: req.body.companyWebsite,
+        type: req.body.companyType,
+        shortDescription: req.body.companyShortDescription,
+        longDescription: req.body.companyLongDescription,
+        imageUrl: req.body.companyPic
+      }
+      Company.create(companyData, function(err, company) {
+        if(err) return next(err);
+        return res.json({
+          "info": company
+        })
+      })
+    }
+    else {
+      console.log("Missing something!", req.body);
+    }
+})
 
 module.exports = router;
