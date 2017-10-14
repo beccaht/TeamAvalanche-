@@ -71,6 +71,7 @@
 		</div>
 		<button type="submit" onclick="processForm(event)" class="btn btn-default btnEdit">Save</button>
 	</form>
+	
 	<div id="response">
 
 	</div>
@@ -93,7 +94,9 @@
 		})
 		.then(function(response) {
 			console.log(response);
-			var reply = "A new Givv Admin: " + response.data.info.firstName + " " + response.data.info.lastName + " has been successfully added! Please give them their login information: " + document.getElementById("adminEmail").value + " : " + document.getElementById("adminPassword").value + "!";
+			var reply = "A new Givv Admin: " + response.data.info.firstName + " " + response.data.info.lastName + 
+			" has been successfully added! Please give them their login information: " + 
+			document.getElementById("adminEmail").value + " : " + document.getElementById("adminPassword").value + "!";
 			document.getElementById("response").innerText = reply;
 		})
 		.catch(function(error) {

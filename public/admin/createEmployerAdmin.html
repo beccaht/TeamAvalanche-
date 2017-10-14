@@ -63,7 +63,7 @@
 		</div>
 		<div class= "form-group">
 			<label>Email:</label>
-				<input type = "url" class="form-control" id = "EmployerAdministratorWebsite">
+				<input type = "text" class="form-control" id = "EmployerAdministratorWebsite">
 		</div>
 		<div class="form-group">
 		    <label for="pwd">Password:</label>
@@ -72,6 +72,10 @@
 		<button type="submit" onclick"processForm(event)" class="btn btn-default btnEdit">Save</button>
 	</form>
 
+	<div id="response">
+		
+			</div>
+			
 <footer>
 
 	<p>&copy; Givv 2017</p>
@@ -91,7 +95,9 @@
 		})
 		.then(function(response) {
 			console.log(response);
-			window.location.href = response.data.data;
+			var reply = "A new Administrator: " + response.data.info.firstName + ' ' +
+			response.data.info.lastName + " has been added!";
+			document.getElementById("response").innerText = reply;
 		})
 		.catch(function(error) {
 			console.log(error);

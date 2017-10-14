@@ -81,6 +81,10 @@
 		<button type="submit" onclick"processForm(event)" class="btn btn-default btnEdit">Save</button>
 	</form>
 
+	<div id="response">
+		
+	</div>
+
 <footer>
 
 	<p>&copy; Givv 2017</p>
@@ -102,6 +106,9 @@
 		})
 		.then(function(response) {
 			console.log(response);
+			var reply = "A new Company: " + response.data.info.name + 
+			" has been successfully added!";
+			document.getElementById("response").innerText = reply;
 		})
 		.catch(function(error) {
 			console.log(error);
