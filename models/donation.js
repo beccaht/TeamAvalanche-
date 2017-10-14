@@ -1,14 +1,18 @@
 var mongoose = require('mongoose');
 var DonationObject = new mongoose.Schema({
-    class: {
+    project: {
       type: String,
       required: true
     },
-    information: {
+    amount: {
       type: String,
+      required: true
+    },
+    date: {
+      type: Date,
       required: true
     }
   });
 
-  var Donation = mongoose.model('Information', DonationObject);
+  var Donation = mongoose.model('Donation', DonationObject);
   module.exports = Donation;

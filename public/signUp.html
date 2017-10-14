@@ -9,7 +9,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 
 	<link rel = "stylesheet" href='stylesheets/main.css'>
-	<link rel = "stylesheet" href='stylesheets/employee.css'>
+	<link rel = "stylesheet" href='stylesheets/employees.css'>
 
 	<title>New Profile</title>
 
@@ -48,9 +48,7 @@
 		  </div>
 		  <div class="form-group">
 		    <label>Profile Picture:</label>
-		    <form action="/action_page.php">
-                <input type="file" name="pic" accept="image/*">
-            </form>
+		    <input type="url" class="form-control" id="pictureUrl">
 		  </div>
 		  
 		  <button type="submit" onclick="processForm(event)" class="btn btn-default btnEdit">Save</button>
@@ -74,6 +72,7 @@
 			lastName: document.getElementById("lastName").value,
 			email: document.getElementById("email").value,
 			password: document.getElementById("pwd").value,
+			avatarUrl: document.getElementById("pictureUrl").value
 		})
 		.then(function(response) {
 			console.log(response);
