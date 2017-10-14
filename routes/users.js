@@ -126,7 +126,7 @@ router.get('/roleChoice', function (req, res, next) {
           err.status = 400;
           return next(err);
         } else {
-          return res.sendFile('roleChoice.html', {root: "../public/"});
+          return res.sendFile('adminMenu.html', {root: "../public/"});
         }
       }
     });
