@@ -97,16 +97,16 @@ router.post('/login', bruteforce.prevent, function(req,res,next) {
       req.session.userId = user._id;
       req.session.roles = user.roles;
       if(user.roles.length > 1) {
-        return res.redirect('/users/roleChoice');
+        return res.json({"data":'/users/roleChoice'});
       }
       else if(user.roles.includes("admin")) {
-        return res.redirect('/admin/');
+        return res.json({"data":'/admin'});
       }
       else if(user.roles.includes("employerAdmin")) {
-        return res.redirect('/employers/');
+        return res.json({"data":'/employers/'});
       }
       else {
-        return res.redirect('/employees/');
+        return res.json({"data":'/employees/'});
       }    
     }
   });
@@ -126,7 +126,7 @@ router.get('/roleChoice', function (req, res, next) {
           err.status = 400;
           return next(err);
         } else {
-          return res.sendFile('adminMenu.html', {root: "../public/"});
+          return res.sendFile('adminMenu.html', {root: "public"});
         }
       }
     });
