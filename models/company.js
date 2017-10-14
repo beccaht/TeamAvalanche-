@@ -19,6 +19,12 @@ var CompanySchema = new mongoose.Schema({
     type: String,
     trim: true
   },
+  companyCode: {
+    type: String,
+    unique: true,
+    index: true,
+    required: true
+  },
   shortDescription: String,
   longDescription: String,
   imageUrl: String,
