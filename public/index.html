@@ -19,7 +19,7 @@
 
 <body>
 <header>
-    <h1>Login to Givv</h1>
+    <h1>Givv Login</h1>
 </header>
 
 
@@ -54,8 +54,8 @@
 		event.preventDefault();
 		console.log(document.getElementById("logEmail"))
 		axios.post('https://givv.jnielson.com/users/login', {
-			logEmail: document.getElementById("logEmail").value,
-      		logPwd: document.getElementById("logPwd").value,
+			email: document.getElementById("logEmail").value,
+      		password: document.getElementById("logPwd").value,
 		})
 		.then(function(response) {
             console.log(response);

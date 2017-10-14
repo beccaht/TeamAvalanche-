@@ -69,9 +69,11 @@
 		<label>Password: </label>
 				<input type = "password" class="form-control" id = "adminPassword">
 		</div>
-		<button type="submit" onclick"processForm(Event)" class="btn btn-default btnEdit">Save</button>
+		<button type="submit" onclick="processForm(event)" class="btn btn-default btnEdit">Save</button>
 	</form>
+	<div id="response">
 
+	</div>
 <footer>
 
 	<p>&copy; Givv 2017</p>
@@ -91,7 +93,8 @@
 		})
 		.then(function(response) {
 			console.log(response);
-			window.location.href = response.data.data;
+			var reply = "A new Givv Admin: " + response.data.info + " has been successfully added! Please give them their login information";
+			document.getElementById("response").innerText = reply;
 		})
 		.catch(function(error) {
 			console.log(error);

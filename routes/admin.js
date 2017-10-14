@@ -38,18 +38,18 @@ function requireLogin(req, res, next) {
 router.use('/', requireLogin);
 /* GET home/login page. */
 router.get('/', function(req, res, next) {
-  res.sendFile('menu.html', {'root': '../public/admin'});
+  res.sendFile('admin/menu.html', {'root': 'public'});
 });
 
 router.post('/admin', function(req,res,next) {
-  if (req.body.email &&
-    req.body.password) {
+  if (req.body.adminEmail &&
+    req.body.adminPassword) {
     var userData = {
-  email: req.body.email,
-  password: req.body.password,
+  email: req.body.adminEmail,
+  password: req.body.adminPassword,
   roles: ["admin"],
-  firstName: req.body.firstName || "",
-  lastName: req.body.lastName || "",
+  firstName: req.body.adminFirstName || "",
+  lastName: req.body.adminLastName || "",
   avatarUrl: req.body.avatarUrl || "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
 }
 console.log(userData);
