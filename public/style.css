@@ -22,8 +22,7 @@ header {
 
 .btnEdit {
     display: block;
-    position: relative;
-    left: 85%;
+    margin:auto;
 }
 
 .content, .formWrapper {
@@ -196,4 +195,14 @@ hr {
 
 #editDeleteBtn button {
     background-color: rgb(68,84,106);
+}
+
+#addCompany {
+    display: block;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+#newCoH3 {
+    text-align: center;
 }
