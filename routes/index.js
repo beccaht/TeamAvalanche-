@@ -33,7 +33,6 @@ router.get('/company', function(req,res,next) {
     Company.find({"name":req.body.companyName}).then(companies => {
       return res.json(companies);
     })
-
   }
 })
 
@@ -53,7 +52,9 @@ router.get('/employee', function(req,res,next) {
 
 router.get('/employees', function(req,res,next) {
   if(req.body.companyCode) {
-    
+    Company.find({companyCode: req.body.companyCode}).then(company => {
+      return res.json(company.employees);
+    })
   }
 })
 
