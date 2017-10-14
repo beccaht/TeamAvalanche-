@@ -139,6 +139,11 @@ hr {
   width: 65%;
 }
 
+.projectImg{
+    display: block;
+    width: 65%;
+}
+
 #logoImg {
   width: 15%;
 }
