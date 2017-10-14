@@ -53,7 +53,7 @@
 		console.log(document.getElementById("firstName"))
 		axios.post('https://givv.jnielson.com/users/login', {
 			email: document.getElementById("email").value,
-      		password: document.getElementById("password").value,
+      		password: document.getElementById("pwd").value,
 		})
 		.then(function(response) {
             console.log(response);

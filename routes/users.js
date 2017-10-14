@@ -55,6 +55,7 @@ router.post('/signup', bruteforce.prevent, function(req,res,next) {
         return next(err)
       } else {
         req.session.userId = user._id;
+        req.session.roles = user.roles;
         return res.redirect('/users/profile');
       }
     });
@@ -70,6 +71,7 @@ router.post('/login', bruteforce.prevent, function(req,res,next) {
       return next(err);
     } else {
       req.session.userId = user._id;
+      req.session.roles = user.roles;
       return res.redirect('/users/profile');
     }
   });

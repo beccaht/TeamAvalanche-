@@ -8,26 +8,6 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 
 	<link rel = "stylesheet" href='stylesheets/main.css'>
-    
-    <script async src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script>
-	function processForm() {
-		console.log(document.getElementById("firstName"))
-		axios.post('https://givv.jnielson.com/users/signup', {
-			firstName: document.getElementById("firstName").value,
-			lastName: document.getElementById("lastName").value,
-			email: document.getElementById("email").value,
-      		password: document.getElementById("password").value,
-		})
-		.then(function(response) {
-			console.log(response);
-			document.getElementById("main-content").innerHTML = response.data;
-		})
-		.catch(function(error) {
-			console.log(error);
-		})
-	}
-</script>
 
 	<title>New Profile</title>
 
@@ -78,6 +58,25 @@
 
 </footer> 
 
+<script async src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+	function processForm() {
+		console.log(document.getElementById("firstName"))
+		axios.post('https://givv.jnielson.com/users/signup', {
+			firstName: document.getElementById("firstName").value,
+			lastName: document.getElementById("lastName").value,
+			email: document.getElementById("email").value,
+			password: document.getElementById("pwd").value,
+		})
+		.then(function(response) {
+			console.log(response);
+			document.getElementById("main-content").innerHTML = response.data;
+		})
+		.catch(function(error) {
+			console.log(error);
+		})
+	}
+</script>
 </body>
 
 </html>
