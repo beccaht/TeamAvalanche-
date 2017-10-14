@@ -37,9 +37,9 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public/stylesheets')));
-app.use(express.static(path.join(__dirname, 'public/images')));
-
+// app.use(express.static(path.join(__dirname, 'public')));
+var styles = express.Router().use(express.static(path.join(__dirname,'public','stylesheets')))
+app.use('/stylesheets', styles);
 app.use(cors());
 //use sessions for tracking logins
 app.use(session({
